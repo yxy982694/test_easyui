@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>index--测试easyuiTable</title>
+		<link rel="stylesheet" href="./css/easyui.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/icon.css"/>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.table-container{
+				width: 60%;
+				height: 300px;
+				border: 1px solid #ccc;
+				margin: 50px auto;
+			}
+			.datagrid-body .datagrid-cell {
+			  font-size: 12px !important;
+			  text-overflow: ellipsis;
+			  overflow: hidden;
+			  white-space: nowrap;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="table-container">
+			<table id="dg" data-options="border:false" style="padding:5px;"></table>
+		</div>
+		<script src="js/jquery.1.7.2.min.js"></script>
+		<script src="js/jquery.easyui.min.js"></script>
+		<script src="js/easyui-lang-zh_CN.js"></script>
+		<script>
+			$(function(){
+				var upcomlistData = [{
+					ROW_ID: 1,
+					id: 2519647731,
+					sheetid: "HA-508-200724-000941",
+					sheetname: "生产任务工单1",
+					sheettype: "HA-5081",
+					statename: "派发1",
+					title: "驻马店分公司申请本地新增EMS，申请网管网做通网络1",
+				},{
+					ROW_ID: 2,
+					id: 2519647732,
+					sheetid: "HA-508-200724-000942",
+					sheetname: "生产任务工单2",
+					sheettype: "HA-5082",
+					statename: "派发2",
+					title: "驻马店分公司申请本地新增EMS，申请网管网做通网络2",
+				},{
+					ROW_ID: 3,
+					id: 2519647733,
+					sheetid: "HA-508-200724-000943",
+					sheetname: "生产任务工单3",
+					sheettype: "HA-5083",
+					statename: "派发3",
+					title: "驻马店分公司申请本地新增EMS，申请网管网做通网络3",
+				},{
+					ROW_ID: 4,
+					id: 2519647734,
+					sheetid: "HA-508-200724-000944",
+					sheetname: "生产任务工单4",
+					sheettype: "HA-5084",
+					statename: "派发4",
+					title: "驻马店分公司申请本地新增EMS，申请网管网做通网络4",
+				}];
+				$('#dg').datagrid({
+					data: upcomlistData,
+					fit: true,
+					fitColumns: true,
+					singleSelect: true,
+					border: false,
+					columns:[[
+						{field:'sheetid',title:'工单流水号',width:60,align:'center'},
+						{field:'sheetname',title:'工单类型',width:50,align:'center'},
+						{field:'title',title:'工单主题',width:120,align:'center'},
+						{field:'statename',title:'工单状态',width:30,align:'center'}
+					]]
+				});
+			})
+		</script>
+	</body>
+</html>
